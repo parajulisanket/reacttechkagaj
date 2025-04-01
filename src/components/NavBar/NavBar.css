@@ -1,0 +1,266 @@
+.navbar {
+  width: 100%;
+  position: relative;
+  background-color: white;
+  z-index: 10;
+  top: 0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  padding: 15px 70px;
+  background-color: white;
+  position: relative;
+  z-index: 5;
+}
+
+.logo img {
+  height: 60px;
+}
+
+/* Menu bar - sticky at the top */
+.menu-bar {
+  height: 60px;
+  background-color: #009f00;
+  position: sticky;
+  top: 0 !important;
+  z-index: 10;
+}
+
+.menu-bar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+  height: 70px;
+}
+
+/* Left navigation */
+.left-nav {
+  display: flex;
+  justify-content: start;
+  padding: 0 70px;
+}
+
+.left-nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 25px;
+}
+
+.left-nav li {
+  display: inline-block;
+}
+
+.left-nav a {
+  text-decoration: none;
+  font-family: khand;
+  font-size: 22px;
+  color: white;
+  font-weight: 600;
+}
+
+.left-nav .separator {
+  border-left: 1px solid rgb(151, 148, 148);
+  height: 40px;
+  margin-left: -15px;
+  margin-right: -10px;
+  transform: translateY(-5px);
+}
+
+/* Right side of nav */
+.right-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+  gap: 15px;
+}
+
+.date-time {
+  color: white;
+  font-size: khand;
+  font-weight: 600;
+}
+
+.search {
+  aspect-ratio: 1 / 1;
+  width: 38px;
+  border: none;
+  border-radius: 50%;
+  background-color: #388e3c;
+  color: white !important;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.search:hover {
+  background-color: #22842d;
+}
+
+.right-nav .search,
+.right-nav .hamburger-button {
+  position: relative;
+  top: 0px;
+}
+
+/* Hamburger button container */
+.hamburger-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  width: 50px;
+  height: 25px;
+  transition: all 0.3s ease;
+}
+
+/* The hamburger lines */
+.hamburgermenu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 20px;
+  width: 80%;
+}
+
+.hamburger {
+  height: 3px;
+  border-radius: 2px;
+  width: 100%;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.hamburger-button:hover .hamburger:nth-child(1) {
+  width: 50%;
+  transform: translateX(25%);
+  transition-delay: 0.3s;
+}
+
+.hamburger-button:hover .hamburger:nth-child(2) {
+  transform: rotate(45deg);
+  transition: transform 0.6s ease-in-out;
+}
+
+.hamburger-button:hover .hamburger:nth-child(3) {
+  width: 50%;
+  transform: translateX(75%);
+  transition-delay: 0.3s;
+}
+
+/* To revert the center line back to horizontal after the cross effect */
+.hamburger-button:hover .hamburger:nth-child(2) {
+  animation: rotateBack 0.5s ease-out forwards;
+}
+
+@keyframes rotateBack {
+  0% {
+    transform: rotate(45deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+/* Container for the marquee */
+.marquee {
+  width: 100%;
+  background-color: #f1f1f1;
+  overflow: hidden;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* Trending label that stays on the left side */
+.trending {
+  padding-right: 40px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #009f00;
+  white-space: nowrap;
+}
+
+/* Wrapper for the scrolling content */
+.marquee-wrap {
+  display: flex;
+  justify-content: flex-start;
+  width: 80%;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Container for the actual news that will move */
+.marquee-news {
+  display: flex;
+  animation: marqueeAnimation 120s linear infinite;
+  white-space: nowrap;
+  gap: 40px;
+  box-sizing: border-box;
+  animation-delay: 0s;
+}
+
+/* Each individual news item */
+.marquee-item {
+  display: inline-flex;
+  align-items: center;
+  font-size: 15px;
+  color: #000;
+  white-space: nowrap;
+  opacity: 0.8;
+}
+
+/* Logo container  */
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #009f00;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+/* Logo inside the logo container */
+.news-logo {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+@keyframes marqueeAnimation {
+  0% {
+    transform: translateX(20%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.marquee-news:hover {
+  animation-play-state: paused;
+}
+
+.marquee-item:hover {
+  animation-play-state: paused;
+}

@@ -1,0 +1,35 @@
+.card {
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.card-body {
+  padding: 0px;
+}
+
+.posts img {
+  width: 100%;
+  height: 170px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.title {
+  font-size: 22px;
+  margin-top: 0px;
+  font-weight: 500;
+  color: #333;
+  line-height: 1.45;
+  font-family: Mukta, sans-serif;
+  transition: 0.3s ease-in-out;
+  word-spacing: 3px;
+}
+.title:hover {
+  color: #009f00;
+}
+
+.posts a {
+  text-decoration: none;
+  color: inherit;
+}

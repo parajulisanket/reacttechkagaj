@@ -1,0 +1,282 @@
+.menu {
+  position: fixed;
+  top: 0;
+  left: -330px;
+  width: 330px;
+  height: 100vh;
+  background-color: white;
+  color: white;
+  transition: left 0.3s ease;
+  padding: 0px !important;
+  z-index: 9999;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  margin: 0px !important;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9998;
+  transition: opacity 0.3s ease;
+}
+
+/* Menu open state */
+.menu.open {
+  left: 0;
+  box-shadow: 0 0 48px rgba(34, 96, 191, 0.24);
+  background-color: #f4f6f8;
+}
+
+/* Menu header styling */
+.menu-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  padding: 0;
+  background-color: #029f00;
+  box-sizing: border-box;
+  top: 0;
+  z-index: 10000;
+  flex-shrink: 0;
+}
+
+/* Logo and social media container inside menu header */
+.menu-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  background-color: #029f00;
+  width: 90%;
+}
+
+/* Close button */
+.close-btn {
+  margin-left: auto;
+  margin-right: 25px;
+  margin-top: 10px;
+  border: 2px solid rgba(225, 225, 225, 0.6);
+  width: 45px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: transparent;
+  font-size: 25px;
+  cursor: pointer;
+  transition: color 0.3s ease, border-color 0.3s ease, opacity 0.3s ease;
+}
+
+/* Close button hover effect */
+.close-btn i {
+  color: rgba(225, 225, 225, 0.6);
+}
+.close-btn:hover i {
+  color: #fff;
+  opacity: 0.8;
+}
+.close-btn:hover {
+  border-color: #fff;
+  opacity: 0.8;
+}
+
+/* Social media icon container */
+.social-media-icons {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  padding-bottom: 25px;
+}
+
+/* Styling for each social media icon */
+.social-media-icons a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #388e3c;
+  color: white;
+  font-size: 15px;
+  text-decoration: none;
+}
+
+/* Search area inside the menu */
+.menu-search {
+  display: flex;
+  line-height: 34px;
+  align-items: center;
+  justify-content: space-between;
+  color: #000;
+  background-color: #fff;
+  opacity: 0.7;
+  border: none;
+  padding: 10px 20px 10px 10px;
+  width: 100%;
+  margin: 0;
+  height: 50px;
+  box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 10000;
+}
+
+/* Search input field */
+.menu-search input {
+  flex-grow: 1;
+  background-color: transparent;
+  border: none;
+  color: black;
+  font-size: 16px;
+  padding: 5px 0px;
+  outline: none;
+  font-family: "Arial", sans-serif;
+}
+
+/* Search button */
+.menu-search button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: black;
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+/* Focus effect */
+.menu-search input:focus {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Placeholder text styling */
+.menu-search input::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+  font-family: "Arial", sans-serif;
+  font-size: 16px;
+}
+
+/* Menu list */
+.side-menu-item {
+  background-color: white;
+}
+.menu-list {
+  width: 100%;
+  background-color: #f8f9fa;
+  list-style-type: none;
+  padding: 1px;
+  position: relative;
+  z-index: 1;
+  /* overflow-y: auto; */
+  height: calc(
+    100vh - 200px
+  ); 
+  flex: 1;
+}
+
+.menu-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.menu-list::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.menu-list::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 3px;
+}
+
+.menu-list::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.menu-list li {
+  padding: 10px 25px;
+  margin-bottom: 10px;
+  position: relative;
+  display: flex;
+  vertical-align: middle;
+  overflow: hidden;
+}
+.menu-list li::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.04);
+  transition: left 0.3s ease;
+  z-index: 0;
+}
+.menu-list a {
+  gap: 16px;
+  display: flex;
+  align-items: center;
+  color: black;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 600;
+  transition: color 0.3s ease;
+  z-index: 5;
+  flex: 2;
+  line-height: 1;
+  margin-top: 9px;
+}
+.material-symbols-outlined {
+  aspect-ratio: 1/1;
+  height: 30px;
+  width: 30px;
+  color: white;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+}
+
+.menu-list li:hover::before {
+  left: 0;
+}
+
+.menu-list li:hover a {
+  color: #009f00;
+}
+
+.menu-list li:hover .material-symbols-outlined {
+  background-color: #009f00;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.1);
+  margin: 10px 0;
+  position: relative;
+  z-index: 1;
+}
+
+.menu-container {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100vh;
+  background-color: white;
+  transition: 0.5s;
+  z-index: 9998;
+  overflow-y: auto;
+}

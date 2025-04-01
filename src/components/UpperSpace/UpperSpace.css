@@ -1,0 +1,23 @@
+.container {
+  display: none;
+}
+
+hr {
+  display: none;
+}
+
+.upper-space {
+  position: relative;
+  left: 5%;
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.06);
+  z-index: 999;
+  width: 90%;
+  margin-top: 50px;
+  z-index: 1;
+}
+
+.container,
+hr {
+  display: none;
+}
