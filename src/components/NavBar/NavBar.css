@@ -6,26 +6,38 @@
   top: 0;
 }
 
+/* Logo Section */
+.nav-logo-section {
+  width: 100%;
+  background-color: white;
+  position: relative;
+  z-index: 5;
+}
+
 .logo {
   display: flex;
   align-items: center;
   padding: 15px 70px;
   background-color: white;
-  position: relative;
-  z-index: 5;
 }
 
 .logo img {
   height: 60px;
 }
 
-/* Menu bar - sticky at the top */
+/* Menu Bar Section */
+.nav-menu-section {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #009f00;
+}
+
 .menu-bar {
+  width: 100%;
   height: 60px;
   background-color: #009f00;
-  position: sticky;
-  top: 0 !important;
-  z-index: 10;
 }
 
 .menu-bar-container {
@@ -179,7 +191,14 @@
   }
 }
 
-/* Container for the marquee */
+/* Trending News Section */
+.nav-trending-section {
+  width: 100%;
+  background-color: #f1f1f1;
+  position: relative;
+  z-index: 4;
+}
+
 .marquee {
   width: 100%;
   background-color: #f1f1f1;
@@ -191,7 +210,6 @@
   position: relative;
 }
 
-/* Trending label that stays on the left side */
 .trending {
   padding-right: 40px;
   font-size: 16px;
@@ -200,7 +218,6 @@
   white-space: nowrap;
 }
 
-/* Wrapper for the scrolling content */
 .marquee-wrap {
   display: flex;
   justify-content: flex-start;
@@ -209,7 +226,6 @@
   overflow: hidden;
 }
 
-/* Container for the actual news that will move */
 .marquee-news {
   display: flex;
   animation: marqueeAnimation 120s linear infinite;
@@ -219,7 +235,6 @@
   animation-delay: 0s;
 }
 
-/* Each individual news item */
 .marquee-item {
   display: inline-flex;
   align-items: center;
@@ -263,4 +278,212 @@
 
 .marquee-item:hover {
   animation-play-state: paused;
+}
+
+/* Mobile Responsive Styles */
+@media screen and (max-width: 768px) {
+  .nav-logo-section .logo {
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .logo img {
+    height: 45px;
+  }
+
+  .nav-menu-section {
+    position: sticky;
+    top: 0;
+  }
+
+  .menu-bar {
+    height: 50px;
+  }
+
+  .row {
+    padding: 0;
+    height: 50px;
+    justify-content: center;
+  }
+
+  .left-nav {
+    display: none;
+  }
+
+  .right-nav {
+    padding: 0;
+    width: auto;
+    gap: 15px;
+    justify-content: center;
+  }
+
+  .date-time {
+    font-size: 13px;
+  }
+
+  .search {
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+  }
+
+  .hamburger-button {
+    padding: 8px;
+  }
+
+  .marquee {
+    height: 35px;
+  }
+
+  .trending {
+    padding-right: 20px;
+    font-size: 14px;
+  }
+
+  .marquee-wrap {
+    width: 70%;
+  }
+
+  .marquee-item {
+    font-size: 13px;
+  }
+
+  .logo-container {
+    width: 25px;
+    height: 25px;
+    margin-right: 8px;
+  }
+
+  .news-logo {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .nav-logo-section .logo {
+    padding: 8px 15px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .logo img {
+    height: 42px;
+  }
+
+  .menu-bar {
+    height: 45px;
+  }
+
+  .row {
+    height: 45px;
+  }
+
+  .right-nav {
+    gap: 10px;
+  }
+
+  .search {
+    width: 28px;
+    height: 28px;
+  }
+
+  .marquee-wrap {
+    width: 65%;
+  }
+}
+
+/* Tablet Responsive Styles */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .nav-logo-section .logo {
+    padding: 12px 40px;
+  }
+
+  .logo img {
+    height: 50px;
+    justify-content: center;
+  }
+
+  .menu-bar {
+    height: 55px;
+  }
+
+  .row {
+    padding: 0;
+    height: 55px;
+    justify-content: center;
+  }
+
+  .left-nav {
+    display: none;
+  }
+
+  .right-nav {
+    padding: 0;
+    gap: 30px;
+    width: auto;
+    justify-content: center;
+  }
+
+  .date-time {
+    font-size: 14px;
+  }
+
+  .search {
+    width: 35px;
+    height: 35px;
+  }
+
+  /* Marquee tablet styles */
+  .marquee {
+    height: 38px;
+  }
+
+  .trending {
+    padding-right: 30px;
+    font-size: 15px;
+  }
+
+  .marquee-wrap {
+    width: 75%;
+  }
+
+  .marquee-item {
+    font-size: 14px;
+  }
+
+  .logo-container {
+    width: 28px;
+    height: 28px;
+    margin-right: 9px;
+  }
+
+  .news-logo {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* Larger tablets and small laptops */
+@media screen and (min-width: 1025px) and (max-width: 1200px) {
+  .nav-logo-section .logo {
+    padding: 15px 50px;
+  }
+
+  .left-nav {
+    padding: 0 50px;
+  }
+
+  .left-nav ul {
+    gap: 20px;
+  }
+
+  .left-nav a {
+    font-size: 20px;
+  }
+
+  .right-nav {
+    padding: 0 40px;
+  }
 }

@@ -6,7 +6,7 @@ import Search from "../Search/Search";
 import Menu from "../Menu/Menu";
 
 const NavBar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false); // State to toggle the menu visibility
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [news, setNews] = useState([
     "आधिकारिक रुपमा छुट: ग्राहकोंको लागि",
     "विवादि: अब मात्र ५ मिनेटमा चार्ज, ४०० किलोमिटर यात्रा",
@@ -31,103 +31,106 @@ const NavBar = () => {
   }, []);
 
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen); // Toggle menu state
+    setIsMenuOpen(!isMenuOpen);
   };
 
   return (
-    <nav className="navbar">
-      {/* Top part with logo (optional) */}
-      <div className="nav-top">
+    <>
+      {/* Logo Section */}
+      <div className="nav-logo-section">
         <div className="logo">
           <img src={logo} alt="TechKagaj Logo" />
         </div>
       </div>
 
-      {/* Menu bar */}
-      <div className="menu-bar">
-        <div className="row">
-          {/* Left navigation */}
-          <div className="left-nav">
-            <ul>
-              <li>
-                <a href="#">
-                  <i className="fa-solid fa-house"></i>
-                </a>
-              </li>
-              <li className="separator"></li>
-              <li>
-                <a href="#">टेक अपडेट</a>
-              </li>
-              <li>
-                <a href="#">टिप्स</a>
-              </li>
-              <li>
-                <a href="#">रिभ्यु</a>
-              </li>
-              <li>
-                <a href="#">टेलिकम</a>
-              </li>
-              <li>
-                <a href="#">इन्टरनेट</a>
-              </li>
-              <li>
-                <a href="#">ग्याजेट्स</a>
-              </li>
-              <li>
-                <a href="#">टेक्नोलोजी</a>
-              </li>
-              <li>
-                <a href="#">सोसल मिडिया</a>
-              </li>
-              <li>
-                <a href="#">स्टार्टअप</a>
-              </li>
-            </ul>
-          </div>
+      {/* Menu Bar Section */}
+      <div className="nav-menu-section">
+        <div className="menu-bar">
+          <div className="row">
+            {/* Left navigation */}
+            <div className="left-nav">
+              <ul>
+                <li>
+                  <a href="#">
+                    <i className="fa-solid fa-house"></i>
+                  </a>
+                </li>
+                <li className="separator"></li>
+                <li>
+                  <a href="#">टेक अपडेट</a>
+                </li>
+                <li>
+                  <a href="#">टिप्स</a>
+                </li>
+                <li>
+                  <a href="#">रिभ्यु</a>
+                </li>
+                <li>
+                  <a href="#">टेलिकम</a>
+                </li>
+                <li>
+                  <a href="#">इन्टरनेट</a>
+                </li>
+                <li>
+                  <a href="#">ग्याजेट्स</a>
+                </li>
+                <li>
+                  <a href="#">टेक्नोलोजी</a>
+                </li>
+                <li>
+                  <a href="#">सोसल मिडिया</a>
+                </li>
+                <li>
+                  <a href="#">स्टार्टअप</a>
+                </li>
+              </ul>
+            </div>
 
-          {/* Right side - date, search, hamburger */}
-          <div className="right-nav">
-            <div className="date-time">१० चैत २०८१, सोमबार</div>
-
-            <Search />
-
-            <button
-              type="button"
-              className="hamburger-button"
-              aria-label="Menu"
-              onClick={toggleMenu} 
-            >
-              <div className={`hamburgermenu ${isMenuOpen ? "open" : ""}`}>
-                <div className="hamburger line1"></div>
-                <div className="hamburger line2"></div>
-                <div className="hamburger line3"></div>
-              </div>
-            </button>
+            {/* Right side - date, search, hamburger */}
+            <div className="right-nav">
+              <div className="date-time">२२ चैत्र २०८१, शनिबार</div>
+              <Search />
+              <button
+                type="button"
+                className="hamburger-button"
+                aria-label="Menu"
+                onClick={toggleMenu}
+              >
+                <div className={`hamburgermenu ${isMenuOpen ? "open" : ""}`}>
+                  <div className="hamburger line1"></div>
+                  <div className="hamburger line2"></div>
+                  <div className="hamburger line3"></div>
+                </div>
+              </button>
+            </div>
           </div>
         </div>
       </div>
 
+      {/* Menu Component */}
       <Menu isOpen={isMenuOpen} toggleMenu={toggleMenu} />
 
-      {/* marquee to show trending news */}
-      <div className="marquee">
-        <div className="trending">
-          <h3>Trending:</h3>
-        </div>
-        <div className="marquee-wrap">
-          <div className="marquee-news">
-            {news.concat(news).map((item, index) => (
-              <div key={index} className="marquee-item">
-                <div className="logo-container">
-                  <img src={Logo1} alt="Logo" className="news-logo" />
+      {/* Trending News Section */}
+      <div className="nav-trending-section">
+        <div className="marquee">
+          <div className="trending">
+            <h3>Trending:</h3>
+          </div>
+          <div className="marquee-wrap">
+            <div className="marquee-news">
+              {news.concat(news).map((item, index) => (
+                <div key={index} className="marquee-item">
+                  <div className="logo-container">
+                    <img src={Logo1} alt="Logo" className="news-logo" />
+                  </div>
+                  {item}
                 </div>
-                {item}
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </div>
-    </nav>
+    </>
   );
 };
 
