@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/reacttechkagaj/static/css/main.4d0ec85e.css",
-    "main.js": "/reacttechkagaj/static/js/main.79573f7e.js",
+    "main.css": "/reacttechkagaj/static/css/main.581569fc.css",
+    "main.js": "/reacttechkagaj/static/js/main.5638406b.js",
     "static/js/453.ed3810f9.chunk.js": "/reacttechkagaj/static/js/453.ed3810f9.chunk.js",
     "static/media/Tech6.jpg": "/reacttechkagaj/static/media/Tech6.45906301278b32c3cf76.jpg",
     "static/media/GBLIME.gif": "/reacttechkagaj/static/media/GBLIME.445e4c444ada924a8029.gif",
@@ -35,12 +35,12 @@
     "static/media/fa-v4compatibility.ttf": "/reacttechkagaj/static/media/fa-v4compatibility.da94ef451f4969af06e6.ttf",
     "static/media/fa-v4compatibility.woff2": "/reacttechkagaj/static/media/fa-v4compatibility.ea8f94e1d22e0d35ccd4.woff2",
     "index.html": "/reacttechkagaj/index.html",
-    "main.4d0ec85e.css.map": "/reacttechkagaj/static/css/main.4d0ec85e.css.map",
-    "main.79573f7e.js.map": "/reacttechkagaj/static/js/main.79573f7e.js.map",
+    "main.581569fc.css.map": "/reacttechkagaj/static/css/main.581569fc.css.map",
+    "main.5638406b.js.map": "/reacttechkagaj/static/js/main.5638406b.js.map",
     "453.ed3810f9.chunk.js.map": "/reacttechkagaj/static/js/453.ed3810f9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4d0ec85e.css",
-    "static/js/main.79573f7e.js"
+    "static/css/main.581569fc.css",
+    "static/js/main.5638406b.js"
   ]
 }
