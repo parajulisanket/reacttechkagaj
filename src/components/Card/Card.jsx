@@ -1,4 +1,3 @@
-// src/components/Card/Card.jsx
 import React from "react";
 import PropTypes from "prop-types";
 import "./Card.css"; 
@@ -20,7 +19,7 @@ const Card = ({ link, image, title }) => {
   );
 };
 
-// Adding prop validation for better error handling
+
 Card.propTypes = {
   link: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
